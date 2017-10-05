@@ -9,8 +9,8 @@ object ShaderHelper {
 
     fun createProgram(fragmentShader: String, vertexShader: String): Int {
         return glCreateProgram().let { programId ->
-            glAttachShader(programId, createShader(GL_VERTEX_SHADER, vertexShader))
             glAttachShader(programId, createShader(GL_FRAGMENT_SHADER, fragmentShader))
+            glAttachShader(programId, createShader(GL_VERTEX_SHADER, vertexShader))
             glLinkProgram(programId)
             programId
         }
